@@ -6,20 +6,33 @@
 
 #### Создать базу данных Postgresql
 psql -U postgres
+
 CREATE DATABASE cookbook;
+
 CREATE USER admin with NOSUPERUSER PASSWORD 'admin';
+
 GRANT ALL PRIVILEGES ON DATABASE cookbook TO admin;
+
+\q
+
+-------------------
 
 ## Запуск контейнера Docker
 
-В корне проекта выпонить:
+В корне проекта site_docker выпонить:
+
 docker-compose up --build
 
 Внутри контейнера выполнить:
+
 docker-compose exec app bash
 #### Применение миграций
+bash
+
 python manage.py migrate
 #### Добавление данных в базу
+bash
+
 python manage.py loaddata data_db.json
 
 Проект запускается на http://127.0.0.1:8000

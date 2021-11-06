@@ -6,12 +6,21 @@
 
 #### Создать базу данных Postgresql
 psql -U postgres
+
 CREATE DATABASE cookbook;
+
 CREATE USER admin with NOSUPERUSER PASSWORD 'admin';
+
 GRANT ALL PRIVILEGES ON DATABASE cookbook TO admin;
+
+\q
+
+----------------------
 
 В виртуальной среде окружения развернуть проект.
 В папке cookbook_root выполнить:
+#### Установка пакетов
+pip install -r requirements.txt
 #### Применение миграций
 python manage.py migrate
 #### Добавление данных в базу
