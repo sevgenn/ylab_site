@@ -27,11 +27,11 @@ docker-compose up --build
 
 docker-compose exec app bash
 #### Применение миграций
-bash
+(bash)
 
 python manage.py migrate
 #### Добавление данных в базу
-bash
+(bash)
 
 python manage.py loaddata data_db.json
 
